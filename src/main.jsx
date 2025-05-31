@@ -11,6 +11,8 @@ import Projects from './pages/Projects.jsx'
 
 import {Provider} from "react-redux"
 import myStore from './store/store.js'
+
+
 const myRouter=createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout/>}>
