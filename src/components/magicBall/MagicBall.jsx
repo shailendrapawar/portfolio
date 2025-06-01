@@ -6,7 +6,7 @@ function MagicBall({extraClasses ,delay,icon}) {
 
   return (
     <div className={`absolute ${extraClasses} h-15 md:h-20  hover:scale-110  w-15 md:w-20 flex justify-center items-center p-3 md:p-5 rounded-full transition-all ease-in-out ${glowClass} `} style={{backgroundColor:currentTheme.accent,animationDelay:`${delay}s`}}
-    s
+    
     >
         {icon?icon:<></>}
     </div>

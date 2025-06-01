@@ -29,8 +29,8 @@ function Navbar() {
 
     console.log(isDay);
 
-    if(isDay){
-      
+    if (isDay) {
+
     }
     // dispatch(setTheme(isDay ? "light" : "dark"));
   }, []);
@@ -39,10 +39,10 @@ function Navbar() {
   return (
     <nav className=" cursor-pointer h-13 w-[90%] max-w-200 bg-white mt-5 rounded-4xl flex justify-center items-center relative"
       style={{ backgroundColor: currentTheme.cardBackground, border: `1px solid ${currentTheme.border}`, boxShadow: ` 2px 2px 10px ${currentTheme.shadow}` }}
-      onClick={()=>setToggle(false)}
+      onClick={() => setToggle(false)}
     >
 
-      <FaDollarSign className="h-7 w-7 absolute left-5" onClick={(e) =>{e.stopPropagation();  navigate("/")}} />
+      <FaDollarSign className="h-7 w-7 absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
 
       <nav className="web-nav flex justify-center items-center gap-5 ">
         <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
@@ -51,22 +51,24 @@ function Navbar() {
       </nav>
 
 
-      <nav className={`mobile-nav h-25 w-[80%] absolute -bottom-25 rounded-b-2xl hidden`} style={toggle ? { backgroundColor: currentTheme.cardBackground, } : { display: "none" }}>
-
+      <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-30 rounded-b-2xl hidden`} style={toggle ? { backgroundColor: currentTheme.cardBackground, } : { display: "none" }}>
+        <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
+        <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
+        <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
       </nav>
 
 
 
       <span className={` theme-toggle h-5 w-10 rounded-xl flex items-center absolute right-10 ${currentTheme.name == "light" ? "justify-start" : "justify-end"} pl-1 pr-1`}
-        onClick={(e) =>{e.stopPropagation(); dispatch(toggleTheme())}}
+        onClick={(e) => { e.stopPropagation(); dispatch(toggleTheme()) }}
         style={{ backgroundColor: currentTheme.secondaryAccent }}
       >
         {currentTheme.name == "light" && (<MdSunny className={`text-white rotateRight `} />)}
         {currentTheme.name == "dark" && (<HiMiniMoon className={`text-white rotateLeft `} />)}
       </span>
 
-      {!toggle && (<CgMenuRight className=" rotateRight mobileNav-toggler absolute right-5 h-7 w-7 " onClick={(e) =>{e.stopPropagation();  setToggle(!toggle)}} />)}
-      {toggle && (<RxCross2 className=" rotateLeft mobileNav-toggler absolute right-5 h-7 w-7" onClick={(e) =>{e.stopPropagation();  setToggle(!toggle)}} />)}
+      {!toggle && (<CgMenuRight className=" rotateRight mobileNav-toggler absolute right-5 h-7 w-7 " onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
+      {toggle && (<RxCross2 className=" rotateLeft mobileNav-toggler absolute right-5 h-7 w-7" onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
 
 
     </nav>
