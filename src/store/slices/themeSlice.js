@@ -34,20 +34,19 @@ const slice=createSlice({
             backgroundImage:"./assets/dark-background.jpg"
         },
         currentTheme:{
-            name:"light",
+       name:"dark",
             primary:"#2563EB",
-            accent:"#00BFFF",
-            background:"#F5F8FF",
-            cardBackground:"#FFFFFF",
-            secondaryAccent:"#A78BFA",
-            textPrimary:"#0B0F2C",
-            textSecondary:"#6B7280",
-            border:"#D1D9E6",
-            hover:"#00BFFF",
-            shadow:"#2563EB",
+            accent:"#00F0FF",
+            background:"#0B0F2C",
+            cardBackground:"#141C3A",
+            secondaryAccent:"#7C3AED",
+            textPrimary:"#FFFFFF",
+            textSecondary:"#AAB4CF",
+            border:"#2C3759",
+            hover:"#00F0FF",
+            shadow:"#7C3AED",
 
-            backgroundImage:"./assets/light-background.webp"
-   
+            backgroundImage:"./assets/dark-background.jpg"
         }
     },
 

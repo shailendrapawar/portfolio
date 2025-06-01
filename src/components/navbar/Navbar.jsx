@@ -29,6 +29,9 @@ function Navbar() {
 
     console.log(isDay);
 
+    if(isDay){
+      
+    }
     // dispatch(setTheme(isDay ? "light" : "dark"));
   }, []);
 
