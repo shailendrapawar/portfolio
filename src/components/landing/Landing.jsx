@@ -32,7 +32,7 @@ function Landing() {
 
 
 
-        <main className="h-[45%] w-full p-3 flex flex-col justify-center items-start gap-8 sm:h-full sm:w-[50%] sm:gap-15 sm:pl-10 md:pl-5">
+        <main className="h-[50%] w-full p-3 flex flex-col justify-center items-start gap-8 sm:h-full sm:w-[50%] sm:gap-15 sm:pl-10 ">
           <h3 className="text-xl sm:text-2xl md:text-4xl" style={{ color: currentTheme.textPrimary }}>Hi, I'm <span style={{ color: currentTheme.accent }}>Shailendra Pawar</span></h3>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl " style={{ color: currentTheme.secondaryAccent }}>Full Stack Developer</h1>
@@ -48,7 +48,7 @@ function Landing() {
         </main>
 
 
-        <aside className="h-[55%] relative flex justify-center items-center   sm:h-full sm:w-[50%] sm:pr-10">
+        <aside className="h-[50%] w-full relative flex justify-center items-center   sm:h-full sm:w-[50%] sm:pr-10">
           <div className="h-60 w-50 relative flex items-center justify-center sm:h-80 sm:w-65 md:h-95 md:w-80">
             <MagicBall extraClasses={"-top-8 left-2 magicBall-anime "}  delay={0.7} icon={<a href={urls.github} target="_blank" className="h-full w-full"><FaGithub className="h-full w-full text-black"/></a>}/>
             <MagicBall extraClasses={"-top-2 -right-5 magicBall-anime  "} delay={0.1} icon={<a href={urls.linkedin} target="_blank" className="h-full w-full"><FaLinkedin className="h-full w-full text-black"/></a>}  />
