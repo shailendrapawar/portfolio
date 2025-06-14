@@ -1,0 +1,37 @@
+.rotate{
+    animation: variable-rotate 4s infinite ease-in-out;
+}
+.unrotate{
+    animation: unrotate 4s infinite ease-in-out;
+  pointer-events: none;
+}
+@keyframes variable-rotate {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(90deg); }
+    35%  { transform: rotate(180deg); }
+    60%  { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes unrotate {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-90deg); }
+    35%  { transform: rotate(-180deg); }
+    60%  { transform: rotate(-270deg); }
+    100% { transform: rotate(-360deg); }
+  }
+
+  
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-13px);
+    }
+  }
+  
+.float-anime {
+    animation: none;
+    animation: float 2s ease-in-out infinite;
+  }

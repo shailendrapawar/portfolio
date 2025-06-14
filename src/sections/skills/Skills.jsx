@@ -34,7 +34,7 @@ function Skills() {
 
 
 
-                <nav className="w-[95%] max-w-100 h-15 rounded-full  text-[10px] sm:text-sm flex justify-evenly items-center"
+                <nav className="w-[95%] max-w-100 h-10 sm:h-15 rounded-full  text-[10px] sm:text-sm flex justify-evenly items-center"
                 style={{backgroundColor:currentTheme.secondaryAccent}}
                 >
 
