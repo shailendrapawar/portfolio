@@ -4,7 +4,7 @@ import "./landing.css"
 
 import lightWizzard from "../../assets/blue-wizard.png"
 import darkWizzard from "../../assets/white-wizard.png"
-import MagicBall from "../magicBall/MagicBall";
+import MagicBall from "../../components/magicBall/MagicBall";
 
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";

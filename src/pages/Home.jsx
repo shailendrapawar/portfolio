@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
-import Landing from "../components/landing/Landing"
-import AboutMe from "../components/aboutMe/AboutMe"
+import Landing from "../sections/landing/Landing"
+import AboutMe from "../sections/aboutMe/AboutMe"
+import Skills from "../sections/skills/Skills"
 
 function Home() {
   const {currentTheme}=useSelector(s=>s.theme)
@@ -10,6 +11,8 @@ function Home() {
       <Landing/>
 
       <AboutMe/>
+
+      <Skills/>
 
     </div>
   )

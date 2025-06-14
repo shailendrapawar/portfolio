@@ -7,7 +7,7 @@ function AboutMe() {
     const {currentTheme}=useSelector(s=>s.theme)
     return (
         <div className="h-150  sm:h-90  w-full max-w-full flex justify-center relative p-5"
-        style={{backgroundColor:currentTheme.background}}
+        // style={{backgroundColor:currentTheme.background}}
         >
 
 
@@ -25,7 +25,7 @@ function AboutMe() {
                 <figure className="w-full h-full sm:w-[50%]  sm:pr-10 flex justify-center items-center"
                 style={{}}
                 >
-                    <img style={{}} src={illustrationImg} className="h-50 w-70 sm:h-60 sm:w-90 sm:pr-0 rounded-lg"></img>
+                    <img style={{}} src={illustrationImg} className="h-60 w-80 sm:h-60 sm:w-90 sm:pr-0 rounded-lg"></img>
                 </figure>
 
             </section>
