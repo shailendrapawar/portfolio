@@ -3,6 +3,7 @@ import Landing from "../sections/landing/Landing"
 import AboutMe from "../sections/aboutMe/AboutMe"
 import Skills from "../sections/skills/Skills"
 import Services from "../sections/services/Services"
+import Projects from "../sections/projects/Projects"
 
 function Home() {
   const {currentTheme}=useSelector(s=>s.theme)
@@ -16,6 +17,8 @@ function Home() {
       <Skills/>
 
       <Services/>
+
+      <Projects/>
 
     </div>
   )
