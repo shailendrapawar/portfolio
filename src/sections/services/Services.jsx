@@ -17,7 +17,7 @@ const Services = () => {
 
 
     return (
-        <div className="w-full  h-auto min-h-100 mt-5 flex  justify-center items-center relative p-5">
+        <div className="w-full  h-auto min-h-100  flex  justify-center items-center relative p-5">
 
             <section className="h-150 sm:h-100 w-full max-w-250 flex flex-col sm:flex-row-reverse sm:justify-between">
 

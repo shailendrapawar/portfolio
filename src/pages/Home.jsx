@@ -4,9 +4,12 @@ import AboutMe from "../sections/aboutMe/AboutMe"
 import Skills from "../sections/skills/Skills"
 import Services from "../sections/services/Services"
 import Projects from "../sections/projects/Projects"
+import Ball from "../components/ball/Ball"
+import Footer from "../components/footer/Footer"
 
 function Home() {
   const {currentTheme}=useSelector(s=>s.theme)
+  
   return (
     <div className="text-white w-full h-auto">
 
@@ -19,6 +22,8 @@ function Home() {
       <Services/>
 
       <Projects/>
+
+      <Footer/>
 
     </div>
   )

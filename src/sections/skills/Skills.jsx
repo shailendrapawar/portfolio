@@ -13,7 +13,7 @@ function Skills() {
 
 
     return (
-        <div className="h-150 w-full  flex justify-center  mt-10 sm:mt-10">
+        <div className="h-150 w-full  flex justify-center p-5">
 
             <section className="w-full max-w-150 h-full  flex flex-col justify-center items-center ">
 
