@@ -5,7 +5,8 @@ const allProjects=[
         github:"https://github.com/shailendrapawar/studyCrush",
         live:"https://study-crush.vercel.app/",
         img:"/projectImages/studyCrush.png",
-        skills:"react,nodejs,express,mongodb,redux,postman,tailwind"
+        skills:"react,nodejs,express,mongodb,redux,postman,tailwind",
+        category:"mern"
     },
     {
         title:"Buzz Talk",
@@ -13,9 +14,18 @@ const allProjects=[
         github:"https://github.com/shailendrapawar/mernChatBackend",
         live:"https://mern-chat-frontend-sepia.vercel.app/",
         img:"/projectImages/buzzTalk.png",
-        skills:"react,nodejs,express,mongodb,redux,postman,tailwind"
+        skills:"react,nodejs,express,mongodb,redux,postman,tailwind",
+        category:"mern"
+    },
 
-
+    {
+        title:"Crusty Bites",
+        description:"A clean and responsive web app for a pizza store where users can browse the menu and simulate placing orders",
+        github:"https://github.com/shailendrapawar/foodOrder-app",
+        live:"https://crusty-bites.vercel.app/",
+        img:"/projectImages/crustyBites.png",
+        skills:"react,tailwind,redux",
+        category:"frontend"
     }
 ]
 

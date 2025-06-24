@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className="h-50 w-full bg-black text-gray-500 flex flex-col justify-center gap-5 items-center">
 
-            <section className="w-full max-w-100 flex justify-center items-center gap-2">
+            <section className="w-full max-w-100 flex justify-center items-center gap-3">
                 <a target="_blank" href={githubLink}>GITHUB</a>
                 <a target="_blank" href={linkedinLink}>LINKEDIN</a>
                 <a target="_blank" href={leetcodeLink}>LEETCODE</a>

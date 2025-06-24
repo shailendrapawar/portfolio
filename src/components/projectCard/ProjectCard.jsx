@@ -33,7 +33,7 @@ function ProjectCard({data}) {
         />
       </section>
 
-      <figure className={`project-img-body absolute ${isHover?"-top-5 shadow-md":"top-4"} ${isHover?"h-[55%] w-[95%]":"h-[50%]"} w-[90%] rounded-md shadow-black transition-all ease-in-out flex flex-col gap-1 `}>
+      <figure className={`project-img-body absolute ${isHover?"-top-5 shadow-md":"top-5"} ${isHover?"h-[55%] w-[95%] rounded-3xl":"h-[50%]"} w-[90%]  overflow-clip shadow-black transition-all ease-in-out flex flex-col gap-1 `}>
         <img src={projectImg} 
         alt="projectimg"
         className="relative  bg-white min-h-full w-full rounded-md "
@@ -43,14 +43,14 @@ function ProjectCard({data}) {
         <a
         href={data?.live}
         target="_blank"
-        className={`live-link absolute bottom-2 left-5 ${isHover?"block":"hidden"}  p-1.5 rounded-full hover:scale-110 active:scale-100 `}
+        className={`live-link absolute bottom-2 left-2 ${isHover?"block":"hidden"}  p-1.5 rounded-full hover:scale-110 active:scale-100 `}
          style={{backgroundColor:currentTheme?.secondaryAccent}}
         ><FaLink className="w-6 h-6"/></a>
 
         <a 
         target="_blank"
         href={data?.github}
-        className={`github-link absolute bottom-2 right-5 ${isHover?"block":"hidden"}   p-1.5 rounded-full hover:scale-110 active:scale-100`}
+        className={`github-link absolute bottom-2 right-2 ${isHover?"block":"hidden"}   p-1.5 rounded-full hover:scale-110 active:scale-100`}
         style={{backgroundColor:currentTheme?.secondaryAccent}}
         ><FaGithub className="w-6 h-6  "/></a>
       </figure>

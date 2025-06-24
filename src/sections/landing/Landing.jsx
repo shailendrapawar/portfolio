@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { useNavigate } from "react-router";
 
 const urls={
   linkedin:"https://www.linkedin.com/in/shailendra-pawar792/",
@@ -25,6 +26,7 @@ const urls={
 
 function Landing() {
   const { currentTheme } = useSelector(s => s.theme);
+  const navigate=useNavigate();
 
   return (
     <div className="relative min-h-[calc(100vh-80px)] flex justify-center ">
@@ -43,7 +45,9 @@ function Landing() {
 
           <div className="h-10 w-55 sm:w-65 sm:h-12 md:w-80 md:h-14 flex gap-2 " style={{ color: currentTheme.textPrimary }}>
             <button className="w-[50%] h-full cursor-pointer rounded-tl-3xl text-white transition-all hover:w-[70%] sm:text-lg md:text-2xl " style={{ backgroundColor: currentTheme.primary }}><a href={urls.resume} target="_blank">Resume</a></button>
-            <button className="w-[50%] h-full cursor-pointer rounded-br-3xl sm:text-lg  md:text-2xl transition-all hover:w-[70%]" style={{ border: ` 2px solid ${currentTheme.primary}` }}>Let's talk?</button>
+            <button className="w-[50%] h-full cursor-pointer rounded-br-3xl sm:text-lg  md:text-2xl transition-all hover:w-[70%]" style={{ border: ` 2px solid ${currentTheme.primary}` }}
+            onClick={()=>navigate("/contact")}
+            >Let's talk?</button>
           </div>
         </main>
 
