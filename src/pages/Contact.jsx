@@ -2,10 +2,14 @@ import { useSelector } from "react-redux"
 import InputBox from "../components/inputBox/InputBox";
 import { useState } from "react";
 import "./pages.css"
+import toast from "react-hot-toast";
+import sendEmailService from "../services/sendEmailService";
 
 function Contact() {
   const { currentTheme } = useSelector(s => s.theme);
+  const [loading, setLoading] = useState(false);
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const [emailData, setEmailData] = useState({
     name: "",
@@ -20,7 +24,49 @@ function Contact() {
       ...prev,
       [name]: value
     }))
-    console.log(emailData)
+
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (loading) return;
+
+    if (emailData.name === "" || emailData.email === "" || emailData.subject === "" || emailData.message === "") {
+      toast.error("All fields are required");
+      return
+    }
+    if (!(emailRegex.test(emailData.email.trim()))) {
+      toast.error("Invalid email");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await sendEmailService({
+        name: emailData.name,
+        email: emailData.email,
+        message: emailData.message
+      })
+
+    } catch (err) {
+      console.log(err);
+      setEmailData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      })
+      toast.error("Something went wrong")
+    } finally {
+      setEmailData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      })
+      setLoading(false);
+    }
   }
 
   const subjectOptions = [
@@ -35,7 +81,7 @@ function Contact() {
   return (
     <div className="w-full h-[90vh] flex justify-center items-center ">
 
-      <section className="w-full max-w-90 h-150 flex flex-col items-start gap-5 p-5">
+      <section className="w-full max-w-110 h-auto flex flex-col items-start gap-5 p-5 rounded-md">
 
         <h3
           className="text-3xl"
@@ -45,7 +91,10 @@ function Contact() {
           <span className="text-xl">Hello,<br></br> <span style={{ color: currentTheme.secondaryAccent }}>Feel free to connect</span></span>
         </section>
 
-        <main className="h-auto w-full gap-3 flex flex-col">
+
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className="h-auto w-full gap-3 flex flex-col">
 
           <InputBox
             value={emailData.name}
@@ -54,6 +103,7 @@ function Contact() {
             placeholder={"enter you name"}
             name="name"
             currentTheme={currentTheme}
+            loading={loading}
           />
 
           <InputBox
@@ -63,11 +113,16 @@ function Contact() {
             placeholder={"enter you email"}
             name="email"
             currentTheme={currentTheme}
+            loading={loading}
           />
 
-          <select className="w-[100%] max-w-80 h-10  rounded-3xl text-xs p-2 outline-none"
-            style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary }}
+          <select className="w-[100%] max-w-120 h-10  rounded-3xl text-xs p-2 outline-none"
+            style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary, boxShadow: `2px 2px 5px black` }}
             required
+            onChange={(e) => handleChange(e)}
+            value={emailData.subject}
+            name="subject"
+            disabled={loading}
           >
             <option value={null}>What's this regarding</option>
             {subjectOptions?.map((option, i) => {
@@ -79,19 +134,23 @@ function Contact() {
           </select>
 
 
-
-          <textarea className="h-35 w-full bg-white text-black rounded-3xl outline-none pl-5 pr-5 pt-2 pb-2  text-xs scroll-bar"
+          <textarea className="h-35 w-full bg-white text-black rounded-3xl outline-none pl-5 pr-5 pt-2 pb-2  text-xs scroll-bar mt-2"
             style={{ resize: "none", boxShadow: `2px 2px 5px black` }}
             placeholder="enter your message "
             required
+            onChange={(e) => handleChange(e)}
+            value={emailData.message}
+            name="message"
+            disabled={loading}
           >
           </textarea>
 
-        </main>
+          {!loading && (<button className=" self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full shadow-md active:shadow-none active:scale-95 transition-all ease-out shadow-black" type="submit"
+            style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary }}
+          >SEND</button>)}
 
-        <button className=" self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full"
-        style={{backgroundColor:currentTheme.secondaryAccent,color:currentTheme.textPrimary}}
-        >SEND</button>
+        </form>
+
 
 
       </section>
