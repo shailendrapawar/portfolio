@@ -27,7 +27,7 @@ function Navbar() {
     const hour = new Date().getHours();
     const isDay = hour >= 6 && hour < 18; // Daytime between 6 AM and 6 PM
 
-    console.log(isDay);
+    // console.log(isDay);
 
     if (isDay) {
 
@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <nav className=" cursor-pointer h-13 w-[90%] max-w-200 bg-white mt-5 rounded-4xl flex justify-center items-center relative"
-      style={{ backgroundColor: currentTheme.cardBackground, border: `1px solid ${currentTheme.border}`, boxShadow: ` 2px 2px 10px ${currentTheme.shadow}` }}
+      style={{ backgroundColor: currentTheme.cardBackground, border: `0px solid ${currentTheme.border}`, boxShadow: ` 2px 2px 5px ${currentTheme.shadow}` }}
       onClick={() => setToggle(false)}
     >
 

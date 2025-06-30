@@ -2,7 +2,7 @@ import emailjs from "emailjs-com"
 import toast from "react-hot-toast";
 
 const sendEmailService = async (data) => {
-
+  
   const { name, email, message } = data;
 
   const isSent = emailjs.send(

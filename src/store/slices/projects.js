@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const intialState={
-    
-}
+import allProjects from "../../utils/projects";
 
 const slice=createSlice({
 
-    initialState:[],
+    initialState:[...allProjects],
     name:"projects",
     reducers:{
         

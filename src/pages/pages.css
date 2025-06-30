@@ -20,3 +20,11 @@ option{
   background-color: #555;  /* Thumb on hover */
 }
 
+.glass-gradient {
+background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}

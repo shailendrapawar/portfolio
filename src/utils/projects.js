@@ -6,7 +6,7 @@ const allProjects=[
         live:"https://study-crush.vercel.app/",
         img:"/projectImages/studyCrush.png",
         skills:"react,nodejs,express,mongodb,redux,postman,tailwind",
-        category:"mern"
+        category:"fullstack"
     },
     {
         title:"Buzz Talk",
@@ -15,7 +15,7 @@ const allProjects=[
         live:"https://mern-chat-frontend-sepia.vercel.app/",
         img:"/projectImages/buzzTalk.png",
         skills:"react,nodejs,express,mongodb,redux,postman,tailwind",
-        category:"mern"
+        category:"fullstack"
     },
 
     {
@@ -25,6 +25,23 @@ const allProjects=[
         live:"https://crusty-bites.vercel.app/",
         img:"/projectImages/crustyBites.png",
         skills:"react,tailwind,redux",
+        category:"frontend"
+    },{
+        title:"Todo's",
+        description:"A simple and responsive todo list application built using HTML, CSS, and JavaScript.Users can add tasks, mark them as completed, and delete them — all in a clean, minimal interface.",
+        github:"https://github.com/shailendrapawar/todoApp",
+        live:"https://todo-app-orcin-one.vercel.app/",
+        img:"/projectImages/todo.png",
+        skills:"html,css,javascript",
+        category:"frontend"
+    },
+    {
+        title:"Calculator",
+        description:"A basic calculator built with HTML, CSS, and JavaScript that performs standard arithmetic operations like addition, subtraction, multiplication, and division.It features a clean layout and interactive buttons for easy user input and real-time results.",
+        github:"https://github.com/shailendrapawar/calculator",
+        live:"https://calculator-pi-ten-88.vercel.app/",
+        skills:"html,css,javascript",
+        img:"/projectImages/calculator.png",
         category:"frontend"
     }
 ]

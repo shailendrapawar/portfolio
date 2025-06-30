@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./pages.css"
 import toast from "react-hot-toast";
 import sendEmailService from "../services/sendEmailService";
+import Ball from "../components/ball/Ball";
 
 function Contact() {
   const { currentTheme } = useSelector(s => s.theme);
@@ -79,22 +80,21 @@ function Contact() {
   ]
 
   return (
-    <div className="w-full h-[90vh] flex justify-center items-center ">
+    <div className="w-full min-h-[calc(100vh-80px)]  flex justify-center items-center p-5">
 
-      <section className="w-full max-w-110 h-auto flex flex-col items-start gap-5 p-5 rounded-md">
+      <section className="glass-gradient w-full max-w-110 h-auto flex flex-col items-start gap-5 p-5 rounded-md">
 
         <h3
           className="text-3xl"
-          style={{ color: currentTheme.accent }}>Get in Touch</h3>
+          style={{ color: currentTheme.accent }}>Get in Touch🫣</h3>
 
         <section>
           <span className="text-xl">Hello,<br></br> <span style={{ color: currentTheme.secondaryAccent }}>Feel free to connect</span></span>
         </section>
 
-
         <form
           onSubmit={(e) => handleSubmit(e)}
-          className="h-auto w-full gap-3 flex flex-col">
+          className="h-auto w-[100%] sm:w-[90%] self-center gap-3 flex flex-col">
 
           <InputBox
             value={emailData.name}
@@ -116,7 +116,7 @@ function Contact() {
             loading={loading}
           />
 
-          <select className="w-[100%] max-w-120 h-10  rounded-3xl text-xs p-2 outline-none"
+          <select className="w-[100%] max-w-120 h-10  rounded-3xl text-xs p-2 outline-none text-white"
             style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary, boxShadow: `2px 2px 5px black` }}
             required
             onChange={(e) => handleChange(e)}
@@ -145,13 +145,11 @@ function Contact() {
           >
           </textarea>
 
-          {!loading && (<button className=" self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full shadow-md active:shadow-none active:scale-95 transition-all ease-out shadow-black" type="submit"
-            style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary }}
+          {!loading && (<button className="cursor-pointer self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full shadow-md active:shadow-none active:scale-95 transition-all ease-out shadow-black" type="submit"
+            style={{ backgroundColor: currentTheme.secondaryAccent, color: "white" }}
           >SEND</button>)}
 
         </form>
-
-
 
       </section>
 
