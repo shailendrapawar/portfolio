@@ -7,6 +7,8 @@ import { toggleTheme } from "../../store/slices/themeSlice.js"
 import { useEffect, useState } from "react";
 
 import { FaDollarSign } from "react-icons/fa6";
+import { FiDollarSign } from "react-icons/fi";
+
 import { MdSunny } from "react-icons/md";
 import { HiMiniMoon } from "react-icons/hi2";
 import { CgMenuRight } from "react-icons/cg";
@@ -37,34 +39,34 @@ function Navbar() {
 
 
   return (
-    <nav className=" cursor-pointer h-13 w-[90%] max-w-200 bg-white mt-5 rounded-4xl flex justify-center items-center relative"
-      style={{ backgroundColor: currentTheme.cardBackground, border: `0px solid ${currentTheme.border}`, boxShadow: ` 2px 2px 5px ${currentTheme.shadow}` }}
+    <nav className={` cursor-pointer h-13 w-[90%] max-w-200 mt-5 rounded-4xl flex justify-center items-center relative `}
+      style={{ backgroundColor:currentTheme.secondaryAccent, border: `0px solid ${currentTheme.border}`}}
       onClick={() => setToggle(false)}
     >
 
-      <FaDollarSign className="h-7 w-7 absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
+      <FiDollarSign className="h-7 w-7 text-white absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
 
       <nav className="web-nav flex justify-center items-center gap-5 ">
-        <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
-        <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
-        <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
+        <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center text-white transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid white` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
+        <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center text-white transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: ` 3px solid white` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
+        <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center text-white transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid white` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
       </nav>
 
 
-      <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-30 rounded-b-2xl hidden`} style={toggle ? { backgroundColor: currentTheme.cardBackground, } : { display: "none" }}>
-        <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
-        <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
-        <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
+      <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-30 rounded-b-2xl hidden transition-all ease-in-out duration-300`} style={toggle ? { backgroundColor: currentTheme.secondaryAccent, } : { display: "none" }}>
+        <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
+        <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
+        <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
       </nav>
 
 
 
       <span className={` theme-toggle h-5 w-10 rounded-xl flex items-center absolute right-10 ${currentTheme.name == "light" ? "justify-start" : "justify-end"} pl-1 pr-1`}
         onClick={(e) => { e.stopPropagation(); dispatch(toggleTheme()) }}
-        style={{ backgroundColor: currentTheme.secondaryAccent }}
+        style={{ backgroundColor:"white" }}
       >
-        {currentTheme.name == "light" && (<MdSunny className={`text-white rotateRight `} />)}
-        {currentTheme.name == "dark" && (<HiMiniMoon className={`text-white rotateLeft `} />)}
+        {currentTheme.name == "light" && (<MdSunny className={`text-yellow-400 rotateRight `} />)}
+        {currentTheme.name == "dark" && (<HiMiniMoon className={`text-black rotateLeft `} />)}
       </span>
 
       {!toggle && (<CgMenuRight className=" rotateRight mobileNav-toggler absolute right-5 h-7 w-7 " onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}

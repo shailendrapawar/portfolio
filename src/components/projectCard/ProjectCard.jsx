@@ -14,8 +14,8 @@ function ProjectCard({data}) {
    const projectImg=data?.img;
 
   return (
-    <div className="w-[300px]  h-80  rounded-md flex items-center justify-center relative p-2 cursor-pointer"
-    style={{backgroundColor:currentTheme?.cardBackground,boxShadow:`1px 1px 5px ${currentTheme?.shadow}`}}
+    <div className="w-[300px]  h-80  rounded-2xl flex items-center justify-center relative p-2 cursor-pointer shadow-md  drop-shadow-md drop-shadow-black"
+    style={{backgroundColor:currentTheme?.cardBackground,}}
     onMouseEnter={()=>setIsHover(true)}
     onMouseLeave={()=>setIsHover(false)}
     >

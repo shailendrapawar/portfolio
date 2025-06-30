@@ -1,49 +1,67 @@
-
-.mobile-nav{
+.mobile-nav {
     animation: slideDown 0.1s ease-in-out;
 }
-.mobileNav-toggler{
+
+.mobileNav-toggler {
     display: none;
 }
 
 
-.rotateLeft{
+.rotateLeft {
     animation: rotateLeft 0.2s ease-in-out;
 }
-.rotateRight{
-     animation: rotateRight 0.2s ease-in-out;
+
+.rotateRight {
+    animation: rotateRight 0.2s ease-in-out;
 }
 
+.gradient {
+background: linear-gradient(
+  135deg,
+  rgba(37, 99, 235, 0.4),   /* Primary color with higher opacity */
+  rgba(37, 99, 235, 0.15)   /* Lighter tail of same primary */
+);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+border: 1px solid rgba(255, 255, 255, 0.08);
 
-@keyframes slideDown{
-    0%{
+    z-index: 20;
+}
+
+@keyframes slideDown {
+    0% {
         translate: 0px -20px;
         opacity: 0;
     }
-    100%{
-         translate: 0px 0px;
+
+    100% {
+        translate: 0px 0px;
         opacity: 1;
     }
 }
 
 @keyframes rotateLeft {
-    0%{
+    0% {
         opacity: 0;
         rotate: -90deg;
 
     }
-    100%{
+
+    100% {
         opacity: 1;
         rotate: 0deg;
     }
 }
+
 @keyframes rotateRight {
-    0%{
+    0% {
         opacity: 0;
         rotate: 90deg;
 
     }
-    100%{
+
+    100% {
         opacity: 1;
         rotate: 0deg;
     }
@@ -51,17 +69,20 @@
 
 @media screen and (max-width:500px) {
 
-    .web-nav{
+    .web-nav {
         display: none;
     }
-    .mobile-nav{
+
+    .mobile-nav {
         display: flex;
     }
-    .theme-toggle{
-    right:70px
+
+    .theme-toggle {
+        right: 70px
     }
-    .mobileNav-toggler{
+
+    .mobileNav-toggler {
         display: block;
     }
-    
+
 }
