@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <div className="w-full min-h-120 h-auto  flex flex-col gap-5  justify-center items-center p-5">
 
-      <h3 className="text-xl"
+      <h3 className="text-xl md:text-2xl lg:text-3xl"
         style={{ color: currentTheme.accent }}
       >Projects</h3>
 

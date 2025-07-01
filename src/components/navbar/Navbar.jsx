@@ -39,12 +39,12 @@ function Navbar() {
 
 
   return (
-    <nav className={` cursor-pointer h-13 w-[90%] max-w-200 mt-5 rounded-4xl flex justify-center items-center relative `}
+    <nav className={` cursor-pointer h-13 w-[90%] max-w-200 mt-5 rounded-4xl flex justify-center items-center relative shadow-black shadow-md `}
       style={{ backgroundColor:currentTheme.secondaryAccent, border: `0px solid ${currentTheme.border}`}}
       onClick={() => setToggle(false)}
     >
 
-      <FiDollarSign className="h-7 w-7 text-white absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
+      <FiDollarSign className="h-10 w-9  text-white absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
 
       <nav className="web-nav flex justify-center items-center gap-5 ">
         <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center text-white transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid white` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>

@@ -17,7 +17,7 @@ function Skills() {
 
             <section className="w-full max-w-150 h-full  flex flex-col justify-center items-center ">
 
-                <h3 className=" text-lg sm:text-xl" style={{ color: currentTheme.accent }}>My Stack</h3>
+                <h3 className=" text-lg sm:text-xl md:text-2xl" style={{ color: currentTheme.accent }}>My Stack</h3>
 
                 <div className=" w-full h-full grid grid-cols-4 sm:grid-cols-5   place-items-center  p-2" style={{}}>
                     {allSkills.map((skill, i) => (

@@ -19,11 +19,11 @@ const Services = () => {
     return (
         <div className="w-full  h-auto min-h-100  flex  justify-center items-center relative p-5">
 
-            <section className="h-150 sm:h-100 w-full max-w-250 flex flex-col sm:flex-row-reverse sm:justify-between">
+            <section className="h-150 sm:h-100 w-full max-w-250 flex flex-col sm:flex-row-reverse sm:justify-between sm:p-5">
 
                 <aside className="h-[40%] w-full sm:w-[40%] sm:h-full  flex flex-col justify-center items-center gap-2">
 
-                    <h3 className="text-center text-xl" 
+                    <h3 className="text-center text-xl md:text-2xl" 
                     style={{color:currentTheme.accent}}
                     >Services</h3>
 

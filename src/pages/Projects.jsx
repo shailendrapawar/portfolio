@@ -27,7 +27,7 @@ function Projects() {
 
         <nav
           style={{ backgroundColor: currentTheme.primary + `50` }}
-          className="h-10 w-full min-w-[280px] max-w-80 bg-green-300 rounded-full flex justify-between items-center cursor-pointer mt-5 p-1">
+          className="h-10 w-full min-w-[280px] max-w-80 bg-green-300 rounded-full shadow-black shadow-sm flex justify-between items-center cursor-pointer mt-5 p-1">
           <span onClick={() => setType("frontend")}
             style={type === "frontend" ? { backgroundColor: currentTheme.primary, color: "white" } : {}}
             name="frontend" className=" h-8 w-[30%] flex justify-center items-center rounded-full transition-all ease-in-out duration-300">Frontend</span>
