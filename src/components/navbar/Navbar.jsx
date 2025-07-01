@@ -53,7 +53,7 @@ function Navbar() {
       </nav>
 
 
-      <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-30 rounded-b-2xl hidden transition-all ease-in-out duration-300`} style={toggle ? { backgroundColor: currentTheme.secondaryAccent, } : { display: "none" }}>
+      <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-[122px] rounded-b-2xl hidden transition-all ease-in-out duration-300`} style={toggle ? { backgroundColor: currentTheme.secondaryAccent, } : { display: "none" }}>
         <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
         <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
         <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
