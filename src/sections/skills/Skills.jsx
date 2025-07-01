@@ -2,6 +2,7 @@ import "./skills.css"
 import allSkills from "../../utils/allSkills"
 import { useSelector } from "react-redux"
 import { useState } from "react";
+import useLazyLoad from "../../hooks/useLazyLoad";
 function Skills() {
 
     const { currentTheme } = useSelector(s => s.theme);
@@ -9,13 +10,14 @@ function Skills() {
 
     const [hoverIcon, setHoverIcon] = useState(null);
 
+    const[ref,isVisible]=useLazyLoad();
 
 
 
     return (
-        <div className="h-150 w-full  flex justify-center p-5">
+        <div ref={ref} className="h-150 w-full  flex justify-center p-5">
 
-            <section className="w-full max-w-150 h-full  flex flex-col justify-center items-center ">
+            {isVisible && (<section className=" skills-slide w-full max-w-150 h-full  flex flex-col justify-center items-center ">
 
                 <h3 className=" text-lg sm:text-xl md:text-2xl" style={{ color: currentTheme.accent }}>My Stack</h3>
 
@@ -70,7 +72,7 @@ function Skills() {
 
                 </nav>
 
-            </section>
+            </section>)}
 
         </div>
     )

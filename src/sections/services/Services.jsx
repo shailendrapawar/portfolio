@@ -9,17 +9,20 @@ import { FaServer } from "react-icons/fa";import { FaDatabase } from "react-icon
 import { FaLink } from "react-icons/fa6";
 
 import { useSelector } from "react-redux";
+import useLazyLoad from "../../hooks/useLazyLoad";
 
 const Services = () => {
 
     const {currentTheme}=useSelector(s=>s.theme)
+    const[ref,isVisible]=useLazyLoad();
+
     const glowClass="shadow-[0_0_20px_5px_rgba(37,99,235,0.8)] rounded-full bg-[#2563EB]"
 
 
     return (
-        <div className="w-full  h-auto min-h-100  flex  justify-center items-center relative p-5">
+        <div ref={ref} className="w-full  h-auto min-h-100  flex  justify-center items-center relative p-5 animate-fade-in">
 
-            <section className="h-150 sm:h-100 w-full max-w-250 flex flex-col sm:flex-row-reverse sm:justify-between sm:p-5">
+            {isVisible  && (<section className=" service-slide  h-150 sm:h-100 w-full max-w-250 flex flex-col sm:flex-row-reverse sm:justify-between sm:p-5">
 
                 <aside className="h-[40%] w-full sm:w-[40%] sm:h-full  flex flex-col justify-center items-center gap-2">
 
@@ -50,7 +53,7 @@ const Services = () => {
                 </figure>
 
 
-            </section>
+            </section>)}
 
         </div>
     )

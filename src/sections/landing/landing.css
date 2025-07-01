@@ -11,3 +11,17 @@
 .magicBall-anime {
   animation: float 2s ease-in-out infinite;
 }
+
+.landing-slide {
+  animation: slide-from-left 0.5s ease-out forwards;
+}
+@keyframes slide-from-left {
+  from {
+    translate: -40px 0px;
+    opacity: 0;
+  }
+  to {
+     translate: 0px 0px;
+    opacity: 1;
+  }
+}

@@ -1,17 +1,20 @@
 import { useSelector } from "react-redux";
 import illustrationImg from "../../assets/about-me-illustration.jpg";
-
+import "./aboutMe.css"
+import useLazyLoad from "../../hooks/useLazyLoad";
 
 function AboutMe() {
 
     const {currentTheme}=useSelector(s=>s.theme)
+    const[ref,isVisible]=useLazyLoad()
     return (
         <div className="h-150  sm:h-90  w-full max-w-full flex justify-center relative p-5"
         // style={{backgroundColor:currentTheme.background}}
+        ref={ref}
         >
 
 
-            <section className="w-full h-full  flex flex-col max-w-250 sm:flex-row relative">
+            {isVisible && (<section className=" aboutMe-slide  w-full h-full  flex flex-col max-w-250 sm:flex-row relative">
 
                 <aside className="w-full h-full sm:w-[50%] sm:pl-10  flex flex-col gap-5 p-5 justify-center items-center"
                 style={{color:currentTheme.textPrimary}}
@@ -28,7 +31,7 @@ function AboutMe() {
                     <img style={{}} src={illustrationImg} className="h-60 w-80 sm:h-60 sm:w-90 sm:pr-0 rounded-lg"></img>
                 </figure>
 
-            </section>
+            </section>)}
         </div>
     )
 }

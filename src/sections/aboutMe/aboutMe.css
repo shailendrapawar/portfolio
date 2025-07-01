@@ -1,0 +1,14 @@
+
+.aboutMe-slide {
+  animation: slide 0.5s ease-out ;
+}
+@keyframes slide {
+  from {
+    translate: 20px 0px;
+    opacity: 0;
+  }
+  to {
+    translate: 0px 0px;
+    opacity: 1;
+  }
+}

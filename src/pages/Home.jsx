@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux"
+import { lazy } from "react"
+
 import Landing from "../sections/landing/Landing"
 import AboutMe from "../sections/aboutMe/AboutMe"
-import Skills from "../sections/skills/Skills"
-import Services from "../sections/services/Services"
-import Projects from "../sections/projects/Projects"
+import Skills from "../sections/skills/Skills";
+
+import Services from "../sections/services/Services";
+import Projects from "../sections/projects/Projects";
 
 
 function Home() {
@@ -19,10 +22,13 @@ function Home() {
       <Skills/>
 
       <hr className="text-black h-2 w-[80%]" style={{color:currentTheme.accent+ `80`}}></hr>
-      <Services/>
+
+        <Services/>
+
       <hr className="text-black h-2 w-[80%]" style={{color:currentTheme.accent+ `80`}}></hr>
 
-      <Projects/>
+        <Projects/>
+
 
     </div>
   )

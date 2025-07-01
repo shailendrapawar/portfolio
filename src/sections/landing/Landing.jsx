@@ -11,6 +11,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { useNavigate } from "react-router";
+import useLazyLoad from "../../hooks/useLazyLoad";
 
 const urls={
   linkedin:"https://www.linkedin.com/in/shailendra-pawar792/",
@@ -27,13 +28,11 @@ const urls={
 function Landing() {
   const { currentTheme } = useSelector(s => s.theme);
   const navigate=useNavigate();
+  const[ref,isVisible]=useLazyLoad()
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)] flex justify-center ">
-      <section className=" min-h-[calc(100vh-80px)] w-full max-w-250 grid-background flex flex-col sm:flex-row">
-
-
-
+    <div ref={ref} className="relative min-h-[calc(100vh-80px)] flex justify-center ">
+      {isVisible &&(<section className="landing-slide  min-h-[calc(100vh-80px)] w-full max-w-250 grid-background flex flex-col sm:flex-row">
         <main className="h-[50%] w-full p-3 flex flex-col justify-center items-start gap-8 sm:h-full sm:w-[50%] sm:gap-15 sm:pl-10 ">
           <h3 className="text-xl sm:text-2xl md:text-4xl" style={{ color: currentTheme.textPrimary }}>Hi, I'm <span style={{ color: currentTheme.accent }}>Shailendra Pawar</span></h3>
 
@@ -50,8 +49,7 @@ function Landing() {
             >Let's talk?</button>
           </div>
         </main>
-
-
+        
         <aside className="h-[50%] w-full relative flex justify-center items-center   sm:h-full sm:w-[50%] sm:pr-10">
           <div className="h-60 w-50 relative flex items-center justify-center sm:h-80 sm:w-65 md:h-95 md:w-80">
             <MagicBall extraClasses={"-top-8 left-2 magicBall-anime "}  delay={0.7} icon={<a href={urls.github} target="_blank" className="h-full w-full"><FaGithub className="h-full w-full text-black"/></a>}/>
@@ -68,7 +66,7 @@ function Landing() {
 
 
 
-      </section>
+      </section>)}
     </div>
   )
 }
