@@ -39,7 +39,7 @@ function Navbar() {
 
 
   return (
-    <nav className={` cursor-pointer h-13 w-[90%] max-w-200 mt-5 rounded-4xl flex justify-center items-center relative shadow-black shadow-md `}
+    <nav className={` cursor-pointer h-13 w-[90%] max-w-200 mt-5 rounded-4xl flex justify-center items-center sticky top-5 z-20 navbar `}
       style={{ backgroundColor:currentTheme.secondaryAccent, border: `0px solid ${currentTheme.border}`}}
       onClick={() => setToggle(false)}
     >
@@ -61,7 +61,7 @@ function Navbar() {
 
 
 
-      <span className={` theme-toggle h-5 w-10 rounded-xl flex items-center absolute right-10 ${currentTheme.name == "light" ? "justify-start" : "justify-end"} pl-1 pr-1`}
+      <span className={` theme-toggle h-5 w-10 rounded-xl flex items-center absolute right-10 active:scale-95 transition-all ease-in-out hover:shadow-sm active:shadow-none shadow-black ${currentTheme.name == "light" ? "justify-start" : "justify-end"} pl-1 pr-1`}
         onClick={(e) => { e.stopPropagation(); dispatch(toggleTheme()) }}
         style={{ backgroundColor:"white" }}
       >

@@ -20,7 +20,7 @@ const Projects = () => {
         <ProjectCard data={allProjects[1]} />
         <button
           onClick={() => navigate("/projects")}
-          className="h-10 w-30 hover:w-50 active:scale-95 transition-all ease-out rounded-tl-2xl rounded-br-2xl absolute bottom-0" style={{ backgroundColor: currentTheme.primary }}>All Projects</button>
+          className="h-10 w-30 hover:w-50 transition-all ease-out rounded-tl-2xl rounded-br-2xl absolute bottom-0 active:shadow-none shadow-sm shadow-black" style={{ backgroundColor: currentTheme.primary }}>All Projects</button>
 
       </section>
 

@@ -44,8 +44,8 @@ function Landing() {
             and seemless user experience</p>
 
           <div className="h-10 w-55 sm:w-65 sm:h-12 md:w-80 md:h-14 flex gap-2 " style={{ color: currentTheme.textPrimary }}>
-            <button className="w-[50%] h-full cursor-pointer rounded-tl-3xl text-white transition-all hover:w-[70%] sm:text-lg md:text-2xl " style={{ backgroundColor: currentTheme.primary }}><a href={urls.resume} target="_blank">Resume</a></button>
-            <button className="w-[50%] h-full cursor-pointer rounded-br-3xl sm:text-lg  md:text-2xl transition-all hover:w-[70%]" style={{ border: ` 2px solid ${currentTheme.primary}` }}
+            <button className="w-[50%] h-full cursor-pointer rounded-tl-3xl text-white transition-all hover:w-[70%] sm:text-lg md:text-2xl shadow-sm shadow-black active:shadow-none " style={{ backgroundColor: currentTheme.primary }}><a href={urls.resume} target="_blank">Resume</a></button>
+            <button className="w-[50%] h-full cursor-pointer rounded-br-3xl sm:text-lg  md:text-2xl transition-all hover:w-[70%] " style={{ border: ` 2px solid ${currentTheme.primary}` }}
             onClick={()=>navigate("/contact")}
             >Let's talk?</button>
           </div>
