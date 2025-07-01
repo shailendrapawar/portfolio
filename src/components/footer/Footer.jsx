@@ -10,7 +10,7 @@ const Footer = () => {
                 <a target="_blank" href={githubLink}>GITHUB</a>
                 <a target="_blank" href={linkedinLink}>LINKEDIN</a>
                 <a target="_blank" href={leetcodeLink}>LEETCODE</a>
-            </section>
+            </section> 
 
             <h3 className="text-sm">© 2025 Shailendra Pawar. All rights reserved.💀</h3>
 

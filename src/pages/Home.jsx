@@ -4,8 +4,7 @@ import AboutMe from "../sections/aboutMe/AboutMe"
 import Skills from "../sections/skills/Skills"
 import Services from "../sections/services/Services"
 import Projects from "../sections/projects/Projects"
-import Ball from "../components/ball/Ball"
-import Footer from "../components/footer/Footer"
+
 
 function Home() {
   const {currentTheme}=useSelector(s=>s.theme)
@@ -24,8 +23,6 @@ function Home() {
       <hr className="text-black h-2 w-[80%]" style={{color:currentTheme.accent+ `80`}}></hr>
 
       <Projects/>
-
-      <Footer/>
 
     </div>
   )
