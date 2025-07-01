@@ -80,7 +80,7 @@ function Contact() {
   ]
 
   return (
-    <div className="w-full min-h-[calc(100vh-80px)]  flex justify-center items-center p-5">
+    <div className=" slide-anime w-full min-h-[calc(100vh-80px)]  flex justify-center items-center p-5">
 
       <section className="glass-gradient w-full max-w-160 h-auto flex flex-col items-start gap-5 p-5 rounded-md">
 
