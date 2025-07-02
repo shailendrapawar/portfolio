@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { FaLink } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import "./projectCard.css"
-import { useState } from "react";
+import React, { useState } from "react";
 
 function ProjectCard({data}) {
   const {currentTheme}=useSelector(s=>s.theme);
@@ -28,8 +28,8 @@ function ProjectCard({data}) {
          style={{color:currentTheme?.textSecondary}}
         >{data?.description}</p>
 
-        <img className=" overflow-y-scroll h-12 p-2 pt-1 pb-1 rounded-xl transition-all shadow-sm shadow-black ease-in-out mt-1.5" src={skillSrc}
-        style={{backgroundColor:currentTheme?.secondaryAccent+`80`, display:isHover?"block":"none"}}
+        <img className=" overflow-y-scroll h-12 p-2 pt-1 pb-1 rounded-xl transition-all shadow- shadow-black ease-in-out mt-1.5" src={skillSrc}
+        style={{ display:isHover?"block":"none"}}
         />
       </section>
 
@@ -57,4 +57,4 @@ function ProjectCard({data}) {
     </div>
   )
 }
-export default ProjectCard
+export default React.memo(ProjectCard)

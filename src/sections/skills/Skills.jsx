@@ -71,7 +71,6 @@ function Skills() {
                     >Databases</span>
 
                 </nav>
-
             </section>)}
 
         </div>

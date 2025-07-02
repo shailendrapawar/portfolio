@@ -12,11 +12,9 @@ function AboutMe() {
         // style={{backgroundColor:currentTheme.background}}
         ref={ref}
         >
-
-
             {isVisible && (<section className=" aboutMe-slide  w-full h-full  flex flex-col max-w-250 sm:flex-row relative">
 
-                <aside className="w-full h-full sm:w-[50%] sm:pl-10  flex flex-col gap-5 p-5 justify-center items-center"
+                <aside className="w-full h-full sm:w-[50%] sm:pl-10  flex flex-col gap-5 p-5 pt-0 justify-center items-center"
                 style={{color:currentTheme.textPrimary}}
                 >
                     <h3 className="sm:text-xl md:text-2xl" style={{color:currentTheme.accent}}>ABOUT ME</h3>

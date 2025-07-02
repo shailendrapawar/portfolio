@@ -1,6 +1,8 @@
+import React from "react";
 import { useSelector } from "react-redux"
 
 function MagicBall({extraClasses ,delay,icon,title}) {
+  
     const {currentTheme}=useSelector(s=>s.theme);
     const glowClass="shadow-[0_0_20px_5px_rgba(37,99,235,0.8)] rounded-full bg-[#2563EB]"
 
@@ -14,4 +16,4 @@ function MagicBall({extraClasses ,delay,icon,title}) {
 
   )
 }
-export default MagicBall
+export default React.memo(MagicBall);

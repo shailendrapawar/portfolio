@@ -1,3 +1,5 @@
+import React from "react";
+
 const InputBox = ({value,onChange,name,placeholder,type,currentTheme,loading}) => {
   return (
     <div className=" w-[100%] max-w-120 h-10  bg-white rounded-3xl  text-black"
@@ -17,4 +19,4 @@ const InputBox = ({value,onChange,name,placeholder,type,currentTheme,loading}) =
     </div>
   )
 }
-export default InputBox
+export default React.memo(InputBox);

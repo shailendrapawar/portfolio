@@ -11,9 +11,6 @@ const Projects = () => {
   const navigate = useNavigate();
 
   const[ref,isVisible]=useLazyLoad();
-  useEffect(()=>{
-    console.log("rendered projects section")
-  })
 
   return (
     <div ref={ref} className=" w-full min-h-120 h-auto  flex flex-col gap-5  justify-center items-center p-5">
