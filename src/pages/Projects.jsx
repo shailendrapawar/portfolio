@@ -14,7 +14,6 @@ function Projects() {
 
   useEffect(() => {
 
-    console.log("rendered")
     const p = allProjects?.filter((v, i) => v.category === type);
     setRenderedProject(p);
   }, [type]);
@@ -38,9 +37,9 @@ function Projects() {
             name="fullstack" className=" h-8 w-[30%] flex justify-center items-center rounded-full transition-all ease-in-out duration-300">Full-stack</span>
 
 
-          <span onClick={() => setType("other")}
-            style={type === "other" ? { backgroundColor: currentTheme.primary, color: "white" } : {}}
-            name="other" className="h-8 w-[30%] flex justify-center items-center rounded-full transition-all ease-in-out duration-300">Other</span>
+          <span onClick={() => setType("app")}
+            style={type === "app" ? { backgroundColor: currentTheme.primary, color: "white" } : {}}
+            name="app" className="h-8 w-[30%] flex justify-center items-center rounded-full transition-all ease-in-out duration-300">App</span>
         </nav>
 
         <main className="min-h-100 w-full sm:flex-row sm: justify-evenly flex-wrap flex flex-col items-center gap-10 pt-5 pb-5 transition-all ease-in-out duration-300 ">

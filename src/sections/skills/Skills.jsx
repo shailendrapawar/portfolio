@@ -6,7 +6,7 @@ import useLazyLoad from "../../hooks/useLazyLoad";
 function Skills() {
 
     const { currentTheme } = useSelector(s => s.theme);
-    const getRandomDelay = () => `${Math.floor(Math.random() * 5) + 1}s`;
+    const getRandomDelay = () => `${Math.floor(Math.random() * 3) + 1}s`;
 
     const [hoverIcon, setHoverIcon] = useState(null);
 

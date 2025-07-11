@@ -22,8 +22,8 @@ function Navbar() {
   const dispatch = useDispatch();
 
   const [toggle, setToggle] = useState(false);
-
   const { currentTheme } = useSelector(s => s.theme)
+  
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -43,7 +43,6 @@ function Navbar() {
       style={{ backgroundColor:currentTheme.secondaryAccent, border: `0px solid ${currentTheme.border}`}}
       onClick={() => setToggle(false)}
     >
-
       <FiDollarSign className="h-10 w-9  text-white absolute left-5" onClick={(e) => { e.stopPropagation(); navigate("/") }} />
 
       <nav className="web-nav flex justify-center items-center gap-5 ">
@@ -52,14 +51,11 @@ function Navbar() {
         <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center text-white transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid white` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
       </nav>
 
-
       <nav className={`mobile-nav flex-col items-center justify-evenly z-10 h-30 w-[80%] absolute -bottom-[122px] rounded-b-2xl hidden transition-all ease-in-out duration-300`} style={toggle ? { backgroundColor: currentTheme.secondaryAccent, } : { display: "none" }}>
         <NavLink to={"/"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Home</NavLink>
         <NavLink to={"/projects"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Projects</NavLink>
         <NavLink to={"/contact"} className={({ isActive }) => `w-20 h-8 flex justify-center items-center transition-all ease-in-out duration-300`} style={({ isActive }) => isActive ? { borderBottom: `3px solid ${currentTheme.accent}` } : { borderBottom: `3px solid transparent` }}>Contact</NavLink>
       </nav>
-
-
 
       <span className={` theme-toggle h-5 w-10 rounded-xl flex items-center absolute right-10 active:scale-95 transition-all ease-in-out hover:shadow-sm active:shadow-none shadow-black ${currentTheme.name == "light" ? "justify-start" : "justify-end"} pl-1 pr-1`}
         onClick={(e) => { e.stopPropagation(); dispatch(toggleTheme()) }}
@@ -69,9 +65,8 @@ function Navbar() {
         {currentTheme.name == "dark" && (<HiMiniMoon className={`text-black rotateLeft `} />)}
       </span>
 
-      {!toggle && (<CgMenuRight className=" rotateRight mobileNav-toggler absolute right-5 h-7 w-7 " onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
-      {toggle && (<RxCross2 className=" rotateLeft mobileNav-toggler absolute right-5 h-7 w-7" onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
-
+      {!toggle && (<CgMenuRight className=" text-white rotateRight mobileNav-toggler absolute right-5 h-7 w-7 " onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
+      {toggle && (<RxCross2 className=" text-white  rotateLeft mobileNav-toggler absolute right-5 h-7 w-7" onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }} />)}
 
     </nav>
   )
