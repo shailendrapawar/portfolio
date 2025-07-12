@@ -51,10 +51,10 @@ function Landing() {
           </div>
         </main>
 
-        <aside className="h-[50%] w-full relative flex justify-center items-center   sm:h-full sm:w-[50%] sm:pr-10">
+        <aside className=" h-[50%] w-full relative flex justify-center items-center   sm:h-full sm:w-[50%] sm:pr-10">
           <div className="h-60 w-50 relative flex items-center justify-center sm:h-80 sm:w-65 md:h-95 md:w-80">
             <MagicBall extraClasses={"-top-8 left-2 magicBall-anime "} delay={0.7} icon={<a href={urls.github} target="_blank" className="h-full w-full"><FaGithub className="h-full w-full text-black" /></a>} />
-            <MagicBall extraClasses={"-top-2 -right-5 magicBall-anime  "} delay={0.1} icon={<a href={urls.linkedin} target="_blank" className="h-full w-full"><FaLinkedin className="h-full w-full text-black" /></a>} />
+            <MagicBall extraClasses={"-top-2 -right-5 magicBall-anime "} delay={0.1} icon={<a href={urls.linkedin} target="_blank" className="h-full w-full"><FaLinkedin className="h-full w-full text-black" /></a>} />
 
             <img src={currentTheme.name == "light" ? `${lightWizzard}` : `${darkWizzard}`}
               className=" h-full w-full  "

@@ -43,3 +43,18 @@ background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 25
     opacity: 1;
   }
 }
+
+.transform-anime{
+animation: resize-anime 0.5s ease-in ;
+}
+
+@keyframes resize-anime{
+  0%{
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}

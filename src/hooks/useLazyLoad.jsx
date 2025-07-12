@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-const useLazyLoad = (threshold=0.2) => {
+const useLazyLoad = (threshold=0.5) => {
 
     const ref=useRef()
     const [isVisible,setVisible]=useState(false);

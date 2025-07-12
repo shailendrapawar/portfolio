@@ -41,13 +41,13 @@ const Services = () => {
                     <div className={` rotate h-60 w-60 sm:h-70 sm:w-70 md:h-90 md:w-90 rounded-full flex justify-center items-center relative`} 
                     style={{border:` 1px solid ${currentTheme.secondaryAccent}`}}
                     >
-                        <MagicBall title={"API"} extraClasses={"-top-8 unrotate"} icon={<FaLink  className="text-black h-5 w-5" />} />
-                        <MagicBall  title={"Database"} extraClasses={"-right-8 unrotate"} icon={<FaDatabase  className="text-black h-5 w-5"/>} />
+                        <MagicBall title={"API"} extraClasses={"-top-8 unrotate transform-anime"} icon={<FaLink  className="text-black h-5 w-5" />} />
+                        <MagicBall  title={"Database"} extraClasses={"-right-8 unrotate transform-anime "} icon={<FaDatabase  className="text-black h-5 w-5"/>} />
 
                         <img className="unrotate  h-50 w-40 md:h-65 md:w-55 " src={currentTheme.name==="light"?purpleWizard:whiteWizard}></img>
 
-                        <MagicBall  title={"Frontend"} extraClasses={"-bottom-8 unrotate"} icon={<BsWindowSidebar className="text-black h-5 w-5" />} />
-                        <MagicBall title={"Server"} extraClasses={"-left-8 unrotate"} icon={<FaServer className="text-black h-5 w-5" />} />
+                        <MagicBall  title={"Frontend"} extraClasses={"-bottom-8 unrotate transform-anime "} icon={<BsWindowSidebar className="text-black h-5 w-5" />} />
+                        <MagicBall title={"Server"} extraClasses={"-left-8 unrotate transform-anime "} icon={<FaServer className="text-black h-5 w-5" />} />
                     </div>
 
                 </figure>
