@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import illustrationImg from "../../assets/about-me-illustration.jpg";
+import illustrationImg from "/projectImages/about-me-illustration.jpg";
 import "./aboutMe.css"
 import useLazyLoad from "../../hooks/useLazyLoad";
 

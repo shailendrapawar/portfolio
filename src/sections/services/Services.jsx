@@ -1,7 +1,7 @@
 import"./services.css"
-import whiteWizard from "../../assets/white-wizard-meditating.png"
+import whiteWizard from "/projectImages/white-wizard-meditating.png"
 import MagicBall from "../../components/magicBall/MagicBall"
-import purpleWizard from "../../assets/purple-wizard-meditating.png"
+import purpleWizard from "/projectImages/purple-wizard-meditating.png"
 import { FaCode } from "react-icons/fa";
 import { FaTabletScreenButton } from "react-icons/fa6";
 import { BsWindowSidebar } from "react-icons/bs";

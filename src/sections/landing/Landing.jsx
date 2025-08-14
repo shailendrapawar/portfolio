@@ -2,8 +2,8 @@ import { useSelector } from "react-redux"
 // import {}
 import "./landing.css"
 
-import lightWizzard from "../../assets/blue-wizard.png"
-import darkWizzard from "../../assets/white-wizard.png"
+import lightWizzard from "/projectImages/blue-wizard.png"
+import darkWizzard from "/projectImages/white-wizard.png"
 import MagicBall from "../../components/magicBall/MagicBall";
 
 import { FaGithub } from "react-icons/fa";

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 
 function ProjectCard({data}) {
   const {currentTheme}=useSelector(s=>s.theme);
-  const[isHover,setIsHover]=useState(false);
+  const[isHover,setIsHover]=useState(true);
   // console.log(data)
 
    const skillSrc=`https://skillicons.dev/icons?i=${data?.skills}&theme=light`;
