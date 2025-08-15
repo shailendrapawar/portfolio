@@ -28,15 +28,16 @@ function ProjectCard({data}) {
          style={{color:currentTheme?.textSecondary}}
         >{data?.description}</p>
 
-        <img className=" overflow-y-scroll h-12 p-2 pt-1 pb-1 rounded-xl transition-all shadow- shadow-black ease-in-out mt-1.5" src={skillSrc}
+        <img className=" overflow-y-scroll h-12 p-2 pt-1 pb-1 rounded-xl transition-all shadow- shadow-black ease-in-out mt-1.5" 
+        src={skillSrc}
         style={{ display:isHover?"block":"none"}}
         />
       </section>
 
-      <figure className={`project-img-body absolute ${isHover?"-top-5 shadow-md":"top-5"} ${isHover?"h-[55%] w-[95%] rounded-3xl":"h-[50%]"} w-[90%]  overflow-clip shadow-black transition-all ease-in-out flex flex-col gap-1 `}>
+      <figure className={`project-img-body absolute ${isHover?"-top-5 shadow-md":"top-5"} ${isHover?"h-[55%] w-[95%] rounded-3xl":"h-[50%]"} w-[90%]  overflow-hidden shadow-black transition-all ease-in-out flex flex-col gap-1 `}>
         <img src={projectImg} 
         alt="projectimg"
-        className="relative  bg-white min-h-full w-full rounded-md "
+        className={`relative  bg-white min-h-full w-full rounded-md `}
         // style={{boxShadow:`1px 1px 2px ${currentTheme.shadow}`}}
         ></img>
 
@@ -52,7 +53,7 @@ function ProjectCard({data}) {
         href={data?.github}
         className={`github-link absolute bottom-2 right-2 ${isHover?"block":"hidden"}   p-1.5 rounded-full hover:scale-110 active:scale-100`}
         style={{backgroundColor:currentTheme?.secondaryAccent}}
-        ><FaGithub className="w-6 h-6  "/></a>
+        ><FaGithub className="w-6 h-6"/></a>
       </figure>
     </div>
   )

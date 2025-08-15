@@ -155,14 +155,14 @@ function Contact() {
 
         </section>
 
-        <MagicBall extraClasses={" -z-10 top-18 right-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={1} />
-        <MagicBall extraClasses={" -z-10 bottom-20 left-[5%] md:left-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={2.5} />
+        <MagicBall extraClasses={" -z-10 top-18 right-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={0} />
+        <MagicBall extraClasses={" -z-10 bottom-20 left-[5%] md:left-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={0.5} />
 
-        <MagicBall extraClasses={" -z-10 top-55 right-[5%] md:right-[15%]  max-h-15 max-w-15 magicBall-anime"} delay={1.7} />
-        <MagicBall extraClasses={" -z-10 bottom-5 right-[20%] md:right-[30%]  max-h-15 max-w-15 magicBall-anime"} delay={3.7} />
+        <MagicBall extraClasses={" -z-10 top-55 right-[5%] md:right-[15%]  max-h-15 max-w-15 magicBall-anime"} delay={1.2} />
+        <MagicBall extraClasses={" -z-10 bottom-5 right-[20%] md:right-[30%]  max-h-15 max-w-15 magicBall-anime"} delay={1.9} />
 
 
-        <MagicBall extraClasses={" -z-10 top-40 left-[25%]  max-h-15 max-w-15 magicBall-anime"} delay={3.7} />
+        <MagicBall extraClasses={" -z-10 top-40 left-[25%]  max-h-15 max-w-15 magicBall-anime"} delay={0.3} />
 
 
       </main>
