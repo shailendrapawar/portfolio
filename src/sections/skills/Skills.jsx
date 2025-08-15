@@ -22,7 +22,7 @@ function Skills() {
 
                 <div className=" w-full h-full grid grid-cols-4 sm:grid-cols-5   place-items-center  p-2" style={{}}>
                     {allSkills.map((skill, i) => (
-                        <div className={` skillAnime ${skill?.category} ${i % 2 == 0 ? "animate-combo-one" : "animate-combo-two"} ${hoverIcon === skill.category ? "scale-150 drop-shadow-md drop-shadow-blue-400 " : ""}   h-10 w-10 sm:h-15 sm:w-15 overflow-hidden flex items-center justify-center ease-in transition-all cursor-pointer`}
+                        <div className={` skillAnime ${skill?.category} ${i % 2 == 0 ? "animate-combo-one" : "animate-combo-two"} ${hoverIcon === skill.category ? "scale-150  grayscale-0" : "grayscale-75"} h-10 w-10 sm:h-15 sm:w-15 overflow-hidden flex items-center justify-center ease-in transition-all cursor-pointer`}
                             title={skill?.name}
                             key={i}
                             style={hoverIcon === skill?.category ? { animation: "none", } : { animationDelay: getRandomDelay() }}
