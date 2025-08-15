@@ -5,6 +5,7 @@ import "./pages.css"
 import toast from "react-hot-toast";
 import sendEmailService from "../services/sendEmailService";
 import Ball from "../components/ball/Ball";
+import MagicBall from "../components/magicBall/MagicBall";
 
 function Contact() {
   const { currentTheme } = useSelector(s => s.theme);
@@ -80,79 +81,91 @@ function Contact() {
   ]
 
   return (
-    <div className="transform-anime  w-full min-h-[calc(100vh-80px)]  flex justify-center items-center p-5">
+    <div className="transform-anime  w-full min-h-[calc(100vh-80px)]  flex justify-center items-center p-5 relative z-10">
 
-      <section className="glass-gradient w-full max-w-160 h-auto flex flex-col items-start gap-5 p-5 rounded-md">
+      <main className="w-full h-auto flex items-center justify-center max-w-200 relative z-10">
+        <section className="glass-gradient w-full max-w-160 h-auto flex flex-col items-start gap-5 p-5 rounded-md relative z-10">
 
-        <h3
-          className="text-3xl"
-          style={{ color: currentTheme.accent }}>Get in Touch🫣</h3>
+          <h3
+            className="text-3xl z-20"
+            style={{ color: currentTheme.accent }}>Get in Touch🫣</h3>
 
-        <section>
-          <span className="text-xl">Hello,<br></br> <span style={{ color: currentTheme.secondaryAccent }}>Feel free to connect</span></span>
+          <section>
+            <span className="text-xl">Hello,<br></br> <span style={{ color: currentTheme.secondaryAccent }}>Feel free to connect</span></span>
+          </section>
+
+          <form
+            onSubmit={(e) => handleSubmit(e)}
+            className="h-auto w-[100%] max-w-100 sm:w-[90%] self-center gap-3 flex flex-col z-10 ">
+
+            <InputBox
+              value={emailData.name}
+              type={"text"}
+              onChange={handleChange}
+              placeholder={"enter you name"}
+              name="name"
+              currentTheme={currentTheme}
+              loading={loading}
+            />
+
+            <InputBox
+              value={emailData.email}
+              type={"email"}
+              onChange={handleChange}
+              placeholder={"enter you email"}
+              name="email"
+              currentTheme={currentTheme}
+              loading={loading}
+            />
+
+            <select className="w-[100%] max-w-120 h-10  rounded-3xl text-xs p-2 outline-none text-white"
+              style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary, boxShadow: `2px 2px 5px black` }}
+              required
+              onChange={(e) => handleChange(e)}
+              value={emailData.subject}
+              name="subject"
+              disabled={loading}
+            >
+              <option value={null}>What's this regarding</option>
+              {subjectOptions?.map((option, i) => {
+                return <option
+                  className=" text-black"
+                  // style={{backgroundColor:currentTheme.secondaryAccent,color:currentTheme.textPrimay}}
+                  key={i} value={option}>{option}</option>
+              })}
+            </select>
+
+
+            <textarea className="h-35 w-full bg-white text-black rounded-3xl outline-none pl-5 pr-5 pt-2 pb-2  text-xs scroll-bar mt-2"
+              style={{ resize: "none", boxShadow: `2px 2px 5px black` }}
+              placeholder="enter your message "
+              required
+              onChange={(e) => handleChange(e)}
+              value={emailData.message}
+              name="message"
+              disabled={loading}
+            >
+            </textarea>
+
+            {!loading && (<button className="cursor-pointer self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full shadow-md active:shadow-none active:scale-95 transition-all ease-out shadow-black" type="submit"
+              style={{ backgroundColor: currentTheme.secondaryAccent, color: "white" }}
+            >SEND</button>)}
+
+          </form>
+
         </section>
 
-        <form
-          onSubmit={(e) => handleSubmit(e)}
-          className="h-auto w-[100%] max-w-100 sm:w-[90%] self-center gap-3 flex flex-col">
+        <MagicBall extraClasses={" -z-10 top-18 right-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={1} />
+        <MagicBall extraClasses={" -z-10 bottom-20 left-[5%] md:left-[15%]  max-h-10 max-w-10 magicBall-anime"} delay={2.5} />
 
-          <InputBox
-            value={emailData.name}
-            type={"text"}
-            onChange={handleChange}
-            placeholder={"enter you name"}
-            name="name"
-            currentTheme={currentTheme}
-            loading={loading}
-          />
-
-          <InputBox
-            value={emailData.email}
-            type={"email"}
-            onChange={handleChange}
-            placeholder={"enter you email"}
-            name="email"
-            currentTheme={currentTheme}
-            loading={loading}
-          />
-
-          <select className="w-[100%] max-w-120 h-10  rounded-3xl text-xs p-2 outline-none text-white"
-            style={{ backgroundColor: currentTheme.secondaryAccent, color: currentTheme.textPrimary, boxShadow: `2px 2px 5px black` }}
-            required
-            onChange={(e) => handleChange(e)}
-            value={emailData.subject}
-            name="subject"
-            disabled={loading}
-          >
-            <option value={null}>What's this regarding</option>
-            {subjectOptions?.map((option, i) => {
-              return <option
-                className=" text-black"
-                // style={{backgroundColor:currentTheme.secondaryAccent,color:currentTheme.textPrimay}}
-                key={i} value={option}>{option}</option>
-            })}
-          </select>
+        <MagicBall extraClasses={" -z-10 top-55 right-[5%] md:right-[15%]  max-h-15 max-w-15 magicBall-anime"} delay={1.7} />
+        <MagicBall extraClasses={" -z-10 bottom-5 right-[20%] md:right-[30%]  max-h-15 max-w-15 magicBall-anime"} delay={3.7} />
 
 
-          <textarea className="h-35 w-full bg-white text-black rounded-3xl outline-none pl-5 pr-5 pt-2 pb-2  text-xs scroll-bar mt-2"
-            style={{ resize: "none", boxShadow: `2px 2px 5px black` }}
-            placeholder="enter your message "
-            required
-            onChange={(e) => handleChange(e)}
-            value={emailData.message}
-            name="message"
-            disabled={loading}
-          >
-          </textarea>
+        <MagicBall extraClasses={" -z-10 top-40 left-[25%]  max-h-15 max-w-15 magicBall-anime"} delay={3.7} />
 
-          {!loading && (<button className="cursor-pointer self-end h-8 w-20 sm:h-10 sm:w-25 rounded-full shadow-md active:shadow-none active:scale-95 transition-all ease-out shadow-black" type="submit"
-            style={{ backgroundColor: currentTheme.secondaryAccent, color: "white" }}
-          >SEND</button>)}
 
-        </form>
-
-      </section>
-
+      </main>
     </div>
   )
 }

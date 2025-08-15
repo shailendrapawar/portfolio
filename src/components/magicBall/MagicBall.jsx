@@ -12,8 +12,6 @@ function MagicBall({extraClasses ,delay,icon,title}) {
     >
         {icon?icon:<></>}
     </div>
-
-
   )
 }
-export default React.memo(MagicBall);
+export default React.memo(MagicBall); 

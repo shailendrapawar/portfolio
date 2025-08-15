@@ -22,7 +22,7 @@ option{
 
 .glass-gradient {
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -57,4 +57,18 @@ animation: resize-anime 0.5s ease-in ;
     transform: scale(1);
     opacity: 1;
   }
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+.magicBall-anime {
+  animation: float 2s ease-in-out infinite;
 }
