@@ -30,7 +30,7 @@ function AboutMe() {
               animate="visible"
               variants={textReveal}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="sm:text-xl md:text-2xl"
+              className="sm:text-xl md:text-xl"
               style={{ color: currentTheme.accent }}
             >
               ABOUT ME
@@ -41,7 +41,7 @@ function AboutMe() {
               animate="visible"
               variants={textReveal}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="sm:text-xl md:text-2xl"
+              className="sm:text-xl lg:text-xl"
             >
               Coding <b style={{ color: currentTheme.secondaryAccent }}>Dreams</b> into{" "}
               <b style={{ color: currentTheme.secondaryAccent }}>Designs</b>

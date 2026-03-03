@@ -39,11 +39,9 @@ function Skills() {
           >
             {allSkills.map((skill, i) => (
               <div
-                className={`skillAnime ${skill?.category} ${
-                  i % 2 == 0 ? "animate-combo-one" : "animate-combo-two"
-                } ${
-                  hoverIcon === skill.category ? "scale-150 grayscale-0" : "grayscale-75"
-                } h-10 w-10 sm:h-15 sm:w-15 overflow-hidden flex items-center justify-center ease-in transition-all cursor-pointer`}
+                className={`skillAnime ${skill?.category} ${i % 2 == 0 ? "animate-combo-one" : "animate-combo-two"
+                  } ${hoverIcon === skill.category ? "scale-150 grayscale-0" : "grayscale-75"
+                  } h-10 w-10 sm:h-15 sm:w-15 overflow-hidden flex items-center justify-center ease-in transition-all cursor-pointer`}
                 title={skill?.name}
                 key={i}
                 style={
@@ -106,56 +104,56 @@ function Skills() {
             </span>
           </motion.nav> */}
           <motion.nav
-  initial="hidden"
-  animate="visible"
-  variants={textReveal}
-  transition={{ duration: 0.7, delay: 0.6 }}
-  className="w-full max-w-[340px] sm:max-w-[480px] mx-auto h-10 sm:h-12 rounded-full flex items-center justify-between px-2 sm:px-4 backdrop-blur-xl border border-[#00ff9d]/15 shadow-xl shadow-black/30 overflow-hidden"
-  style={{
-    background: "rgba(10, 15, 20, 0.45)", // deep dark semi-transparent for glass effect
-    boxShadow: "0 10px 40px rgba(0, 255, 157, 0.08)", // very subtle neon shadow
-  }}
->
-  {[
-    { label: "Languages", category: "language" },
-    { label: "Frameworks", category: "framework" },
-    { label: "Library", category: "library" },
-    { label: "Tools", category: "tool" },
-    { label: "Databases", category: "database" },
-  ].map((item) => {
-    const isActive = hoverIcon === item.category;
+            initial="hidden"
+            animate="visible"
+            variants={textReveal}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="w-full max-w-[340px] sm:max-w-[480px] mx-auto h-10 sm:h-12 rounded-full flex items-center justify-between px-2 sm:px-4 backdrop-blur-xl border border-[#00ff9d]/15 shadow-xl shadow-black/30 overflow-hidden"
+            style={{
+              background: "rgba(10, 15, 20, 0.45)", // deep dark semi-transparent for glass effect
+              boxShadow: "0 10px 40px rgba(0, 255, 157, 0.08)", // very subtle neon shadow
+            }}
+          >
+            {[
+              { label: "Languages", category: "language" },
+              { label: "Frameworks", category: "framework" },
+              { label: "Library", category: "library" },
+              { label: "Tools", category: "tool" },
+              { label: "Databases", category: "database" },
+            ].map((item) => {
+              const isActive = hoverIcon === item.category;
 
-    return (
-      <motion.span
-        key={item.category}
-        className="relative px-2 sm:px-4 py-2 text-[11px] sm:text-xs font-medium cursor-pointer select-none transition-colors duration-300 flex-1 text-center"
-        style={{
-          color: isActive ? "#00ff9d" : "#d1d5db", // neon green when active, soft gray otherwise
-          textShadow: isActive ? "0 0 10px rgba(0, 255, 157, 0.7)" : "none",
-        }}
-        onMouseEnter={() => setHoverIcon(item.category)}
-        onMouseLeave={() => setHoverIcon(null)}
-        whileHover={{ scale: 1.07, y: -1.5 }}
-        whileTap={{ scale: 0.97 }}
-      >
-        {item.label}
+              return (
+                <motion.span
+                  key={item.category}
+                  className="relative px-2 sm:px-4 py-2 text-[11px] sm:text-xs font-medium cursor-pointer select-none transition-colors duration-300 flex-1 text-center"
+                  style={{
+                    color: isActive ? "#00ff9d" : "#d1d5db", // neon green when active, soft gray otherwise
+                    textShadow: isActive ? "0 0 10px rgba(0, 255, 157, 0.7)" : "none",
+                  }}
+                  onMouseEnter={() => setHoverIcon(item.category)}
+                  onMouseLeave={() => setHoverIcon(null)}
+                  whileHover={{ scale: 1.07, y: -1.5 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {item.label}
 
-        {/* Neon gradient underline – grows from center */}
-        <motion.span
-          className="absolute bottom-[6px] left-1/2 h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#00ff9d] to-[#00d4ff] rounded-full origin-center"
-          initial={{ width: 0, x: "-50%", opacity: 0 }}
-          animate={{
-            width: isActive ? "70%" : 0,
-            x: "-50%",
-            opacity: isActive ? 1 : 0,
-          }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        />
-      </motion.span>
-    );
-  })}
-</motion.nav>
-          
+                  {/* Neon gradient underline – grows from center */}
+                  <motion.span
+                    className="absolute bottom-[6px] left-1/2 h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#00ff9d] to-[#00d4ff] rounded-full origin-center"
+                    initial={{ width: 0, x: "-50%", opacity: 0 }}
+                    animate={{
+                      width: isActive ? "70%" : 0,
+                      x: "-50%",
+                      opacity: isActive ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                  />
+                </motion.span>
+              );
+            })}
+          </motion.nav>
+
         </section>
       )}
     </div>

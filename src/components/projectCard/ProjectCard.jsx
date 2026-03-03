@@ -1,61 +1,104 @@
-import { useSelector } from "react-redux"
-
-import { FaLink } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
-import "./projectCard.css"
-import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { FaLink, FaGithub } from "react-icons/fa6";
+import "./projectCard.css";
+import { memo } from "react";
 
 function ProjectCard({ data }) {
-  const { currentTheme } = useSelector(s => s.theme);
-  const [isHover, setIsHover] = useState(true);
-  // console.log(data)
+  const { currentTheme } = useSelector((s) => s.theme);
 
-  const skillSrc = `https://skillicons.dev/icons?i=${data?.skills}&theme=light`;
+  const skillSrc = `https://skillicons.dev/icons?i=${data?.skills || ""}&theme=light`;
   const projectImg = data?.img;
 
   return (
-    <div className=" transform-anime w-[300px]  h-80  rounded-2xl flex items-center justify-center relative p-2 cursor-pointer shadow-md  drop-shadow-md drop-shadow-black"
-      style={{ backgroundColor: currentTheme?.cardBackground, }}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
+    <div
+      className={`
+        group relative
+        w-full max-w-[340px]
+        aspect-[3/4]                 /* ← fixed 3:4 ratio everywhere */
+        rounded-2xl overflow-hidden
+        transition-all duration-400 ease-out
+        shadow-lg hover:shadow-2xl hover:-translate-y-2
+        bg-gradient-to-br from-black/30 to-black/10
+        backdrop-blur-sm border border-white/10 hover:border-white/30
+      `}
+      style={{
+        backgroundColor: currentTheme?.cardBackground || "#0f172a",
+      }}
     >
-
-      <section className={` self-end flex flex-col ${isHover ? "h-[48%] justify-between" : "h-[40%] justify-evenly"} w-[100%] transition-all ease-in-out`}>
-        <h3 className="text-center text-sm text-black"
-          style={{ color: currentTheme?.textPrimary }}
-        >{data?.title}</h3>
-        <p className=" scroll-bar min-h-[50%] text-[10px] text-black p-0.5 whitespace-break-spaces overflow-clip text-center overflow-y-scroll"
-          style={{ color: currentTheme?.textSecondary }}
-        >{data?.description}</p>
-
-        <img className=" overflow-y-scroll h-12 p-2 pt-1 pb-1 rounded-xl transition-all shadow- shadow-black ease-in-out mt-1.5"
-          src={skillSrc}
-          style={{ display: isHover ? "block" : "none" }}
+      {/* Image + overlay */}
+      <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105 overflow-hidden">
+        <img
+          src={projectImg}
+          alt={data?.title || "Project screenshot"}
+          className="w-full h-full object-cover brightness-90 group-hover:brightness-100 transition-all duration-700"
+          loading="lazy"
         />
-      </section>
+        {/* Strong overlay for white text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/75 to-transparent/55" />
+      </div>
 
-      <figure className={`project-img-body absolute ${isHover ? "-top-5 shadow-md" : "top-5"} ${isHover ? "h-[55%] w-[95%] rounded-3xl" : "h-[50%]"} w-[90%]  overflow-hidden shadow-black transition-all ease-in-out flex flex-col gap-1 `}>
-        <img src={projectImg}
-          alt="projectimg"
-          className={`relative  bg-white min-h-full w-full rounded-md `}
-        // style={{boxShadow:`1px 1px 2px ${currentTheme.shadow}`}}
-        ></img>
+      {/* Top action buttons - appear on hover */}
+      <div className="absolute top-4 left-4 right-4 flex justify-between opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 z-20">
+        {data?.live && (
+          <a
+            href={data.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              flex items-center gap-2 px-4 py-2
+              bg-white/15 backdrop-blur-md border border-white/20
+              rounded-full text-white hover:bg-white/25
+              transition-all duration-300 hover:scale-105 active:scale-95
+            `}
+          >
+            <FaLink className="w-4 h-4" />
+            <span className="text-sm font-medium">Live</span>
+          </a>
+        )}
 
-        <a
-          href={data?.live}
-          target="_blank"
-          className={`live-link absolute bottom-2 left-2 ${isHover ? "block" : "hidden"}  p-1.5 rounded-full hover:scale-110 active:scale-100 `}
-          style={{ backgroundColor: currentTheme?.secondaryAccent }}
-        ><FaLink className="w-6 h-6" /></a>
+        {data?.github && (
+          <a
+            href={data.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              flex items-center gap-2 px-4 py-2
+              bg-white/15 backdrop-blur-md border border-white/20
+              rounded-full text-white hover:bg-white/25
+              transition-all duration-300 hover:scale-105 active:scale-95
+            `}
+          >
+            <FaGithub className="w-4 h-4" />
+            <span className="text-sm font-medium">Code</span>
+          </a>
+        )}
+      </div>
 
-        <a
-          target="_blank"
-          href={data?.github}
-          className={`github-link absolute bottom-2 right-2 ${isHover ? "block" : "hidden"}   p-1.5 rounded-full hover:scale-110 active:scale-100`}
-          style={{ backgroundColor: currentTheme?.secondaryAccent }}
-        ><FaGithub className="w-6 h-6" /></a>
-      </figure>
+      {/* Bottom content area - white text always */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 pt-12">
+        <div className="relative z-10">
+          <h3 className="text-lg font-bold mb-2 line-clamp-1 text-white">
+            {data?.title}
+          </h3>
+
+          <p className="text-xs leading-relaxed line-clamp-4 mb-3 text-white">
+            {data?.description}
+          </p>
+
+          {data?.skills && (
+            <div className="flex justify-center mt-1">
+              <img
+                src={skillSrc}
+                alt="tech stack"
+                className="h-8 sm:h-9 transition-all duration-400 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-export default React.memo(ProjectCard)
+
+export default memo(ProjectCard);
