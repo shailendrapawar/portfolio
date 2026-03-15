@@ -17,7 +17,26 @@ const allProjects = [
         skills: "react,nodejs,express,mongodb,redux,postman,tailwind",
         category: "fullstack"
     },
+    {
+        title: "Luna Ecommerce",
+        description: "A responsive eCommerce UI built with React — featuring product listings, cart management, and a smooth checkout flow.",
+        github: "https://github.com/shailendrapawar/e-commerce",
+        live: "https://e-commerce-seven-olive-87.vercel.app/",
+        img: "/projectImages/luna-ecommerce.png",
+        skills: "typescript,react,tailwind,redux",
+        category: "frontend"
 
+    },
+    {
+        title: "Tesser-X",
+        description: "A sleek agency website showcasing services, portfolio, and team with a modern, professional design.",
+        github: "https://github.com/shailendrapawar/agency-website",
+        live: "https://agency-website-beta-blush.vercel.app/",
+        img: "/projectImages/agency-website.png",
+        skills: "react,javascript,tailwind,redux",
+        category: "frontend"
+
+    },
     {
         title: "Crusty Bites",
         description: "A clean and responsive web app for a pizza store where users can browse the menu and simulate placing orders",
@@ -26,29 +45,12 @@ const allProjects = [
         img: "/projectImages/crustyBites.png",
         skills: "react,tailwind,redux",
         category: "frontend"
-    }, {
-        title: "Todo's",
-        description: "A simple and responsive todo list application built using HTML, CSS, and JavaScript.Users can add tasks, mark them as completed, and delete them — all in a clean, minimal interface.",
-        github: "https://github.com/shailendrapawar/todoApp",
-        live: "https://todo-app-orcin-one.vercel.app/",
-        img: "/projectImages/todo.png",
-        skills: "html,css,javascript",
-        category: "frontend"
-    },
-    {
-        title: "Calculator",
-        description: "A basic calculator built with HTML, CSS, and JavaScript that performs standard arithmetic operations like addition, subtraction, multiplication, and division.It features a clean layout and interactive buttons for easy user input and real-time results.",
-        github: "https://github.com/shailendrapawar/calculator",
-        live: "https://calculator-pi-ten-88.vercel.app/",
-        skills: "html,css,javascript",
-        img: "/projectImages/calculator.png",
-        category: "frontend"
     },
     {
         title: "Camera App",
         description: "A simple mobile app built with React Native that allows users to access the device camera to take photos or record videos. It includes features like camera permission handling, switching between front and back cameras, and saving media to the device gallery.",
         skills: "react,javascript,css,babel,npm,git",
-        github:"https://github.com/shailendrapawar/cameraApp-reactNative",
+        github: "https://github.com/shailendrapawar/cameraApp-reactNative",
         img: "/projectImages/camera-app.svg",
         category: "app"
     },
@@ -58,7 +60,7 @@ const allProjects = [
         github: "https://github.com/shailendrapawar/weatherApp-reactNative",
         skills: "react,javascript,css,babel,npm,git",
         img: "/projectImages/weather-app.svg",
-        category:"app"
+        category: "app"
     }
 ]
 
