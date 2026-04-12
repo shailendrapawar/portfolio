@@ -54,55 +54,6 @@ function Skills() {
               </div>
             ))}
           </div>
-
-          {/* <motion.nav
-            initial="hidden"
-            animate="visible"
-            variants={textReveal}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="w-[100%] max-w-100 h-12 sm:h-15 rounded-full text-[10px] sm:text-sm flex justify-evenly items-center shadow-sm shadow-black"
-            style={{ backgroundColor: currentTheme.secondaryAccent }}
-          >
-            <span
-              className="cursor-pointer hover:scale-120 transition-all ease-in-out"
-              onMouseEnter={() => setHoverIcon("language")}
-              onMouseLeave={() => setHoverIcon(null)}
-            >
-              Languages
-            </span>
-
-            <span
-              className="cursor-pointer hover:scale-120 transition-all ease-in-out"
-              onMouseEnter={() => setHoverIcon("framework")}
-              onMouseLeave={() => setHoverIcon(null)}
-            >
-              Frameworks
-            </span>
-
-            <span
-              className="cursor-pointer hover:scale-120 transition-all ease-in-out"
-              onMouseEnter={() => setHoverIcon("library")}
-              onMouseLeave={() => setHoverIcon(null)}
-            >
-              Library
-            </span>
-
-            <span
-              className="cursor-pointer hover:scale-120 transition-all ease-in-out"
-              onMouseEnter={() => setHoverIcon("tool")}
-              onMouseLeave={() => setHoverIcon(null)}
-            >
-              Tools
-            </span>
-
-            <span
-              className="cursor-pointer hover:scale-120 transition-all ease-in-out"
-              onMouseEnter={() => setHoverIcon("database")}
-              onMouseLeave={() => setHoverIcon(null)}
-            >
-              Databases
-            </span>
-          </motion.nav> */}
           <motion.nav
             initial="hidden"
             animate="visible"

@@ -18,6 +18,15 @@ const allProjects = [
         category: "fullstack"
     },
     {
+        title: "Easy Ride rentals",
+        description: "A modern vehicle rental platform built with Next.js, allowing users to browse, filter, and book vehicles seamlessly. Features a clean UI with shadcn components, responsive design, and optimized performance using server-side rendering. Designed with scalability in mind for future backend integration including booking management and authentication.",
+        github: "https://github.com/shailendrapawar/easy-ride-rental",
+        live: "https://easy-ride-rental.vercel.app/",
+        img: "/projectImages/easy-ride-rentals.png",
+        skills: "typescript,nextjs,react,tailwind",
+        category: "frontend"
+    },
+    {
         title: "Luna Ecommerce",
         description: "A responsive eCommerce UI built with React — featuring product listings, cart management, and a smooth checkout flow.",
         github: "https://github.com/shailendrapawar/e-commerce",
@@ -25,7 +34,6 @@ const allProjects = [
         img: "/projectImages/luna-ecommerce.png",
         skills: "typescript,react,tailwind,redux",
         category: "frontend"
-
     },
     {
         title: "Tesser-X",
